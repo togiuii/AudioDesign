@@ -1,0 +1,201 @@
+[gd_scene load_steps=11 format=3 uid="uid://o7j1iaci52w7"]
+
+[ext_resource type="Script" uid="uid://3r0g1dl4rxjg" path="res://interactables/scripts/door.gd" id="1_sq3mt"]
+[ext_resource type="Material" uid="uid://c2uk6poshvoko" path="res://assets/materials/metal.tres" id="2_w3b65"]
+[ext_resource type="Material" uid="uid://olxsew2mgd5g" path="res://assets/materials/concrete.tres" id="3_ju3jr"]
+[ext_resource type="AudioStream" uid="uid://s761ppxa7tdv" path="res://assets/sounds/door_close.mp3" id="4_sj18u"]
+[ext_resource type="AudioStream" uid="uid://caogx83yo0s6w" path="res://assets/sounds/door_open.mp3" id="5_nucew"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_rigom"]
+size = Vector3(3, 4, 1)
+
+[sub_resource type="Animation" id="Animation_s8y02"]
+length = 0.001
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CSGBox3D:position:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("CSGBox3D:position:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/2/type = "bezier"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("CSGBox3D:position:z")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/3/type = "position_3d"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("CollisionB")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = PackedFloat32Array(0, 1, 0, 0, 0)
+
+[sub_resource type="Animation" id="Animation_grxxj"]
+resource_name = "door_close"
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CSGBox3D:position:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(0, -0.16666667, 0, 0, 0, 0, -0.16666667, 0, 0, 0),
+"times": PackedFloat32Array(0, 1)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("CSGBox3D:position:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(3, -0.16666667, -0.5, 0, 0, 0, -0.16666667, 0, 0, 0),
+"times": PackedFloat32Array(0, 1)
+}
+tracks/2/type = "bezier"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("CSGBox3D:position:z")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(0, -0.16666667, 0, 0, 0, 0, -0.16666667, 0, 0, 0),
+"times": PackedFloat32Array(0, 1)
+}
+tracks/3/type = "position_3d"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("CollisionB")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = PackedFloat32Array(0, 1, 0, 3, 0, 1, 1, 0, 0, 0)
+
+[sub_resource type="Animation" id="Animation_np2fx"]
+resource_name = "door_open"
+length = 2.0
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CSGBox3D:position:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(0, -0.16666667, 0, 0, 0, 0, -0.16666667, 0, 0, 0),
+"times": PackedFloat32Array(0, 1)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("CSGBox3D:position:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(0, -0.16666667, 0, 0, 0, 3, -0.16666667, -0.5, 0, 0),
+"times": PackedFloat32Array(0, 1)
+}
+tracks/2/type = "bezier"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("CSGBox3D:position:z")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(0, -0.16666667, 0, 0, 0, 0, -0.16666667, 0, 0, 0),
+"times": PackedFloat32Array(0, 1)
+}
+tracks/3/type = "position_3d"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("CollisionB")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = PackedFloat32Array(0, 1, 0, 0, 0, 1, 1, 0, 3, 0)
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_gvy4t"]
+_data = {
+&"RESET": SubResource("Animation_s8y02"),
+&"door_close": SubResource("Animation_grxxj"),
+&"door_open": SubResource("Animation_np2fx")
+}
+
+[node name="Door" type="StaticBody3D"]
+script = ExtResource("1_sq3mt")
+
+[node name="CollisionB" type="CollisionShape3D" parent="."]
+shape = SubResource("BoxShape3D_rigom")
+
+[node name="CSGBox3D" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 0.52, 0, 0, 0)
+use_collision = true
+size = Vector3(3, 4, 0.5)
+material = ExtResource("2_w3b65")
+
+[node name="CSGBox3D" type="CSGBox3D" parent="CSGBox3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.85, 0)
+size = Vector3(3, 0.3, 0.6)
+material = ExtResource("2_w3b65")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_gvy4t")
+}
+
+[node name="frame" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.7, 0, 0)
+use_collision = true
+size = Vector3(0.6, 4, 0.6)
+material = ExtResource("3_ju3jr")
+
+[node name="frame2" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.10000014, 2.2, 0)
+material_override = ExtResource("3_ju3jr")
+use_collision = true
+size = Vector3(3.8, 0.4, 0.6)
+
+[node name="frame3" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5, 0, 0)
+material_override = ExtResource("3_ju3jr")
+use_collision = true
+size = Vector3(0.6, 4, 0.6)
+
+[node name="AudioDoorClose" type="AudioStreamPlayer3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 0, 0)
+stream = ExtResource("4_sj18u")
+unit_size = 4.12
+max_db = 1.235
+emission_angle_enabled = true
+doppler_tracking = 2
+
+[node name="AudioDoorOpen" type="AudioStreamPlayer3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 0, 0)
+stream = ExtResource("5_nucew")
+emission_angle_enabled = true
+doppler_tracking = 2

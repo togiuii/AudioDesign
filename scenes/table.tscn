@@ -1,0 +1,21 @@
+[gd_scene load_steps=2 format=3 uid="uid://ccirw63bhbodb"]
+
+[ext_resource type="Material" uid="uid://be3qunj8ton03" path="res://assets/materials/table.tres" id="1_02ppr"]
+
+[node name="Table" type="CSGBox3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.910574, 1.2868726, 1.0764694)
+material_override = ExtResource("1_02ppr")
+size = Vector3(3.5328064, 0.27593994, 2.147461)
+material = ExtResource("1_02ppr")
+
+[node name="CSGBox3D" type="CSGBox3D" parent="."]
+transform = Transform3D(0.2, 0, 0, 0, 1, 0, 0, 0, 0.2, 1.6700311, -0.63017654, 0.971859)
+
+[node name="CSGBox3D3" type="CSGBox3D" parent="."]
+transform = Transform3D(0.2, 0, 0, 0, 1, 0, 0, 0, 0.2, 1.6700311, -0.63017654, -0.97659445)
+
+[node name="CSGBox3D4" type="CSGBox3D" parent="."]
+transform = Transform3D(0.2, 0, 0, 0, 1, 0, 0, 0, 0.2, -1.6711836, -0.63017654, -0.97659445)
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="."]
+transform = Transform3D(0.2, 0, 0, 0, 1, 0, 0, 0, 0.2, -1.6612675, -0.63017654, 0.971859)

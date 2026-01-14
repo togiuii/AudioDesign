@@ -1,0 +1,59 @@
+[gd_scene load_steps=11 format=3 uid="uid://dd2tg3uf3jwh6"]
+
+[ext_resource type="Texture2D" uid="uid://c7x2mh5dnscdt" path="res://assets/textures/scp_079_face.jpg" id="1_5rl7t"]
+[ext_resource type="Script" uid="uid://bqsm5r8g68owc" path="res://interactables/scripts/pc.gd" id="1_qd3p6"]
+[ext_resource type="AudioStream" uid="uid://dgn6j8qdx11gh" path="res://assets/sounds/pc/scp_speech1.mp3" id="2_heffb"]
+[ext_resource type="AudioStream" uid="uid://d2cep3calrr02" path="res://assets/sounds/pc/scp_speech2.mp3" id="3_uuu8i"]
+[ext_resource type="AudioStream" uid="uid://girkvh8xtu6k" path="res://assets/sounds/pc/scp_speech3.mp3" id="4_pghs8"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_qd3p6"]
+size = Vector3(1, 1, 1.3173828)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_o5wjj"]
+albedo_color = Color(0.7529412, 0.72156864, 0.60784316, 1)
+metallic = 1.0
+
+[sub_resource type="BoxMesh" id="BoxMesh_2wdt7"]
+material = SubResource("StandardMaterial3D_o5wjj")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_heffb"]
+albedo_texture = ExtResource("1_5rl7t")
+uv1_scale = Vector3(2.045, 2.045, 2.045)
+uv1_offset = Vector3(-1.86, 0, 0)
+
+[sub_resource type="BoxMesh" id="BoxMesh_uuu8i"]
+material = SubResource("StandardMaterial3D_heffb")
+
+[node name="pc" type="StaticBody3D"]
+collision_layer = 3
+script = ExtResource("1_qd3p6")
+audio_sequence = Array[AudioStream]([ExtResource("2_heffb"), ExtResource("3_uuu8i"), ExtResource("4_pghs8")])
+text_sequence = Array[String](["Hello Human, this project is just a demonstration", "Do not expect much out of this, designed barely to pass the final project. Thank you for your understanding", "Take this energy drink, so you could test out the doppler effect"])
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.1586914)
+shape = SubResource("BoxShape3D_qd3p6")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = SubResource("BoxMesh_2wdt7")
+
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.9999999, 0, 0, 0, 0.8270501, 0.09856542, 0, -0.22160739, 0.36785114, 0, 0.034683585, -0.53460354)
+mesh = SubResource("BoxMesh_2wdt7")
+
+[node name="MeshInstance3D4" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.9999999, 0, 0, 0, 0.588854, 7.450581e-09, 0, 1.7509302e-08, 0.39630157, 0, -0.20331085, -0.52487916)
+mesh = SubResource("BoxMesh_2wdt7")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.8, 0, 0, 0, 0.8, 0, 0, 0, 1, 0, 0, 0.024016738)
+mesh = SubResource("BoxMesh_uuu8i")
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -1, 8.742278e-08, 0, -8.742278e-08, -1, 0, 0, 0)
+emission_angle_enabled = true
+doppler_tracking = 1
+
+[node name="Label3D" type="Label3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.80750287, 0)
+billboard = 1
